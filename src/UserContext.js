@@ -1,6 +1,6 @@
 import React from "react";
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from "./api";
-import { useNavigate, userNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const UserContext = React.createContext();
 
@@ -20,7 +20,7 @@ export const UserStorage = ({ children }) => {
       window.localStorage.removeItem("token");
       navigate("/login");
     },
-    [navigate]
+    [navigate],
   );
 
   async function getUser(token) {
